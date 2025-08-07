@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jchowlabs</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">AI Detector</h1>
+        <br>
+
+        <!-- Upload State -->
+        <div class="upload-state" id="uploadSection">
+            <input type="file" id="fileInput" accept="image/*,video/*,audio/*,.txt">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📤</div>
+                <div class="upload-text">Drop your media here</div>
+                <div class="file-types">Images, Videos, Audio • Max 250MB</div>
+            </div>
+        </div>
+
+        <!-- Processing State -->
+        <div class="processing" id="loading">
+            <div class="spinner"></div>
+            <div class="processing-text" id="processingText">Analyzing your media...</div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error" id="error"></div>
+
+        <!-- Result State -->
+        <div class="result" id="results">
+            <div class="result-badge" id="resultBadge"></div>
+            <div class="confidence-score" id="resultScore"></div>
+            <div class="confidence-label" id="confidenceLabel">Deepfake Probability</div>
+            
+            <div class="details-section">
+                <button class="details-toggle" id="detailsToggle" onclick="toggleDetails()">View detailed analysis</button>
+                <div class="model-details" id="modelDetails"></div>
+            </div>
+            
+            <button class="analyze-another" onclick="resetUpload()">Analyze Another</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
